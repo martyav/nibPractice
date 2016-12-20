@@ -118,11 +118,13 @@ Control-drag from the storyboard to the view controller to create an outlet for 
 
 You probably already know all this, but make sure the view controller is set to initial view controller and that it's the correct controller for the view you're currently working on...
 
+*** To be continued during/after lunch ***
+
 ### Populating your labels in the view controller
 Depending on the kind of stuff you're displaying inside your custom nib, you may want to populate its labels inside the view controller.
 We're doing cards, and we don't want to hardcode them to display any particular thing, so we'll put text inside the labels by calling the custom view's label properties inside viewDidLoad()
 This is more or less the same kind of stuff as populating table cells. You set the labels via the label's text property.
 ### Styling
 You can also style the text and other UI items inside the view before they hit viewDidLoad(), of course. For example, you can give the view a border, a background color, or custom fonts.
-Be careful about where you're setting these properties, or you might accidently set them on the wrong part of the view.
+Setting properties inside the .Swift file's required init?(coder aDecoder: NSCoder) function will set them for the view that contains your custom view. This is kind of confusing, but don't worry about it too much. Your custom view is basically layered over a generic view when you make it. All this really means is that if you try to set the background in that function, you won't be able to see it, because the custom view will completely cover it.  
 
