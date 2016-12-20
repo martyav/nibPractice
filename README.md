@@ -14,27 +14,48 @@ We now have a nib!
 ![](https://cloud.githubusercontent.com/assets/19174201/21356627/583aff0a-c6a0-11e6-8c49-dbd56b71ecc7.png)
 ### Changing GUI Settings
 We have to change a couple of settings inside the GUI to get this nib really functional. Click on View in the left-hand menu and go over to the shield in the right-hand menu. See these? You need to change them.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356631/5c87a478-c6a0-11e6-8035-6bee3463047f.png)
+
 First, change the size of the nib to freeform. 
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356636/637be2f8-c6a0-11e6-871e-f59caeb2fc39.png)
+
 This makes it resizable and so it doesn't blow up huge when you try to run it on your app after carefully placing and sizing a view on your storyboard.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356684/8ae33012-c6a0-11e6-9b93-66ba5a790057.png)
+
 Then, change the status bar to none. This removes the little battery icon up top. It's more of a stylistic thing than anything, but it looks neater.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356638/6871752a-c6a0-11e6-97e3-ca6755c38b5b.png)
+
 Now, click on the file's owner thing in the left-hand menu. 
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356685/8ae77e88-c6a0-11e6-94a8-1e48ced7e88b.png)
+
 See how it says NSObject? 
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356682/8ae23932-c6a0-11e6-9f81-edb1fe64518a.png)
+
 Set this to the name of the .Swift file you just made. This is really important! If you don't do this and start making connections to stuff in the nib, the connections are going to be screwed.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356683/8ae2b33a-c6a0-11e6-8849-7bb311583826.png)
+
 Next, click on the view thing in the left-hand menu and make sure that stays UIView. 
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356680/8adf4fce-c6a0-11e6-8d5c-1bc2e40220e4.png)
+
 Is it UIView? Good. Don't touch it. Leave it the hell alone.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356681/8adf439e-c6a0-11e6-8e96-2dcb42572c47.png)
+
 ### Wiring up the nib
 Create a bunch of labels and stuff inside the nib. Make sure everything fits inside the nib, especially image views. Having labels or image views hang out outside the nib can make them behave in quirky ways.
+
 Two-up the nib and the .Swift file you created. Control drag the UI stuff from the nib into THIS file, not the view controller!
+
 Double-check that the connections are good by control-clicking on each UI item afterward. Sometimes XCode can get confused and connect them to the wrong spot. Then you'll get a confusing error message about how the key isn't compliant and your app will crash.
+
 If the connection says anything other than File's Owner or the name of your .Swift file, remove the connection and attach it again.
 ### Adding nib boilerplate
 Inside the .Swift file, add these two functions:
