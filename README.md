@@ -4,13 +4,21 @@ How do nibs work?
 Just playing. Well...maybe not. This is a guide for making and using nibs, but it doesn't really cover what they're doing on the backend. Somebody at Apple knows. It's fine.
 ## Making a custom playing card from a nib
 First, we need to create a new file to hold the properties for our nib. It's going to be a subclass of UIView. Select CocoaTouchClass so we can get a little boilerplate in our file the instant we create it.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356585/325fb2c6-c6a0-11e6-8212-ebfd00eb4fac.png)
+
 In many cases, we can create nibs at the same time we create our .Swift files. Views are quirky, so that option is greyed out for us right now. That's normal.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356593/3b8b4d4c-c6a0-11e6-8611-6f4f543d4590.png)
+
 So, after you create the .Swift file, go back and explicitly create a nib file as well.
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356601/3fea8254-c6a0-11e6-93e2-c22687d250e7.png)
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356623/538bf48c-c6a0-11e6-8a73-6bef924030b9.png)
+
 We now have a nib!
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21356627/583aff0a-c6a0-11e6-8c49-dbd56b71ecc7.png)
 ### Changing GUI Settings
 We have to change a couple of settings inside the GUI to get this nib really functional. Click on View in the left-hand menu and go over to the shield in the right-hand menu. See these? You need to change them.
@@ -52,15 +60,26 @@ Is it UIView? Good. Don't touch it. Leave it the hell alone.
 ### Wiring up the nib
 Create a bunch of labels and stuff inside the nib. Make sure everything fits inside the nib, especially image views. Having labels or image views hang out outside the nib can make them behave in quirky ways.
 
-Two-up the nib and the .Swift file you created. Control drag the UI stuff from the nib into THIS file, not the view controller!
+![](https://cloud.githubusercontent.com/assets/19174201/21356691/8bbb2454-c6a0-11e6-8a11-cd30006aac1e.png)
+
+Two-up the nib and the .Swift file you created. 
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356689/8bb84ebe-c6a0-11e6-9ead-dbb6b124d557.png)
+
+Control drag the UI stuff from the nib into THIS file, not the view controller!
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356688/8bb7145e-c6a0-11e6-8ab8-4303a23ca40a.png)
 
 Double-check that the connections are good by control-clicking on each UI item afterward. Sometimes XCode can get confused and connect them to the wrong spot. Then you'll get a confusing error message about how the key isn't compliant and your app will crash.
 
+![](https://cloud.githubusercontent.com/assets/19174201/21356690/8bbac6f8-c6a0-11e6-91e9-a87639f821c9.png)
+
 If the connection says anything other than File's Owner or the name of your .Swift file, remove the connection and attach it again.
+
 ### Adding nib boilerplate
 Inside the .Swift file, add these two functions:
 
-override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -75,10 +94,30 @@ override init(frame: CGRect) {
     }
 
 The first one creates a rectangular box for your nib. The second does some magic that fits your nib inside a view when you mess around on the storyboard.
+
 ### Using the custom view on a Storyboard
-Go to the main storyboard and select UIView. Drag out a new view, and set its custom class to the name of your .Swift file. You can't see any of the work you've put into your nib yet, but the new view is now going to display whatever is in your nib when you run the app.
+Go to the main storyboard and select UIView. 
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356738/b022b4e2-c6a0-11e6-8c2d-6cda565e5902.png)
+
+Drag out a new view, and set its custom class to the name of your .Swift file. 
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356737/b01ee740-c6a0-11e6-80e8-1c48085b18da.png)
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356736/b01a7aca-c6a0-11e6-960b-f30ea53f1d2b.png)
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356734/b0178bbc-c6a0-11e6-9942-dd5286f9233c.png)
+
+You can't see any of the work you've put into your nib yet, but the new view is now going to display whatever is in your nib when you run the app. Two-up again.
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356739/b0411af4-c6a0-11e6-85ff-aebe4fe04fa4.png)
+
 Control-drag from the storyboard to the view controller to create an outlet for this new view. 
+
+![](https://cloud.githubusercontent.com/assets/19174201/21356740/b0428984-c6a0-11e6-8d63-ad6153179b26.png)
+
 You probably already know all this, but make sure the view controller is set to initial view controller and that it's the correct controller for the view you're currently working on...
+
 ### Populating your labels in the view controller
 Depending on the kind of stuff you're displaying inside your custom nib, you may want to populate its labels inside the view controller.
 We're doing cards, and we don't want to hardcode them to display any particular thing, so we'll put text inside the labels by calling the custom view's label properties inside viewDidLoad()
