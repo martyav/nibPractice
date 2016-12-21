@@ -133,14 +133,18 @@ You can set some properties inside the required init inside your .Swift file. Pr
 However, if you try to set the background color here, it will be covered up by the background color specified inside the nib. 
 
 ![](https://cloud.githubusercontent.com/assets/19174201/21374549/7d3ef9c8-c6f5-11e6-8a6c-2ea5f4afa853.png)
-![](https://cloud.githubusercontent.com/assets/19174201/21374547/7d38bff4-c6f5-11e6-9c44-1b3d25795554.png)
-![](https://cloud.githubusercontent.com/assets/19174201/21374637/12975434-c6f6-11e6-90a4-32faca64e40b.png)
-![](https://cloud.githubusercontent.com/assets/19174201/21374548/7d3a2d6c-c6f5-11e6-9fda-c1733f74a72e.png)
+
+![](https://cloud.githubusercontent.com/assets/19174201/21375283/68c9a97a-c6fa-11e6-9366-120fbc8d8080.png)
+
+![](https://cloud.githubusercontent.com/assets/19174201/21375285/68cb958c-c6fa-11e6-9c38-eddc6955488e.png)
+
+![](https://cloud.githubusercontent.com/assets/19174201/21375286/68cc004e-c6fa-11e6-96d0-422b4efd3f10.png)
 
 The same deal if you try to set the color for the card in the storyboard -- you won't see the color you set there. Instead, you'll see the color you set in the nib. On the other hand, if you don't set the width and height for your card somewhere, the background will stretch to match the dimensions of whatever is on the storyboard -- but the color still won't match.
 
-![](https://cloud.githubusercontent.com/assets/19174201/21374607/dfd02e22-c6f5-11e6-8f07-b5c65f13d6f7.png)
-![](https://cloud.githubusercontent.com/assets/19174201/21374739/eaa53742-c6f6-11e6-8b4b-2534d0930e85.png)
+![](https://cloud.githubusercontent.com/assets/19174201/21375284/68cb6878-c6fa-11e6-9e3a-eb2677a9dca8.png)
+
+![](https://cloud.githubusercontent.com/assets/19174201/21375328/c788a5e2-c6fa-11e6-97f4-0fb563c178f4.png)
 
 
 ### Filling in your labels in the view controller
@@ -151,7 +155,7 @@ We're making cards, and we don't want to hardcode the labels to display any one 
 This is more or less the same kind of stuff as populating table cells. You set the labels via the label's text property. You can also position them programatically.
 
 ![](https://cloud.githubusercontent.com/assets/19174201/21375005/a36b9a90-c6f8-11e6-80a0-acf71988e101.png)
-![](https://cloud.githubusercontent.com/assets/19174201/21375025/cc3efb56-c6f8-11e6-8bff-fc33737437fd.png)
+![](https://cloud.githubusercontent.com/assets/19174201/21375309/8ddd2160-c6fa-11e6-86b1-d4f2ab21e628.png)
 
 
 
