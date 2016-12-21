@@ -60,7 +60,7 @@ Is it UIView? Good. Don't touch it. Leave it the hell alone.
 ![](https://cloud.githubusercontent.com/assets/19174201/21356681/8adf439e-c6a0-11e6-8e96-2dcb42572c47.png)
 
 ### Wiring up the nib
-Create a bunch of labels and stuff inside the nib. Make sure everything fits inside the nib, especially image views. Having labels or image views hang out outside the nib can make them behave in quirky ways.
+Create a bunch of labels and stuff inside the nib. Make sure everything fits inside the nib, especially image views. Having labels or image views hang out outside the nib can make them behave in odd ways.
 
 ![](https://cloud.githubusercontent.com/assets/19174201/21356691/8bbb2454-c6a0-11e6-8a11-cd30006aac1e.png)
 
@@ -142,21 +142,22 @@ However, if you try to set the background color here, it will be covered up by t
 
 ![](https://cloud.githubusercontent.com/assets/19174201/21375286/68cc004e-c6fa-11e6-96d0-422b4efd3f10.png)
 
-The same deal if you try to set the color for the card in the storyboard -- you won't see the color you set there. Instead, you'll see the color you set in the nib. On the other hand, if you don't set the width and height for your card somewhere, the background will stretch to match the dimensions of whatever is on the storyboard -- but the color still won't match.
+The same deal if you try to set the color for the card in the storyboard -- you won't see the color you set there. Instead, you'll see the color you set in the nib. On the other hand, if you don't explicitly set the width and height for your card, the background will stretch to match the dimensions of whatever is on the storyboard -- but the color still won't match.
 
 ![](https://cloud.githubusercontent.com/assets/19174201/21375284/68cb6878-c6fa-11e6-9e3a-eb2677a9dca8.png)
 
 ![](https://cloud.githubusercontent.com/assets/19174201/21375328/c788a5e2-c6fa-11e6-97f4-0fb563c178f4.png)
 
 
-### Filling in your labels in the view controller
+### Filling in your labels & positioning your card in the view controller
 Depending on the kind of stuff you're displaying inside your custom nib, you may want to also do some display stuff inside the view controller.
 
 We're making cards, and we don't want to hardcode the labels to display any one thing, so we'll put text inside the labels by calling the custom view's label properties inside viewDidLoad()
 
-This is more or less the same kind of stuff as populating table cells. You set the labels via the label's text property. You can also position them programatically.
+This is more or less the same kind of stuff as populating table cells. You set the labels via the label's text property. You can also position the card programatically.
 
 ![](https://cloud.githubusercontent.com/assets/19174201/21375005/a36b9a90-c6f8-11e6-80a0-acf71988e101.png)
+
 ![](https://cloud.githubusercontent.com/assets/19174201/21375309/8ddd2160-c6fa-11e6-86b1-d4f2ab21e628.png)
 
 
