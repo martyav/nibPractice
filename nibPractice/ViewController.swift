@@ -15,13 +15,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        storyboardCard.topLabel?.text = "K"
+        storyboardCard.topLabel?.textColor = .white
+        storyboardCard.bottomLabel?.text = storyboardCard.topLabel.text
+        storyboardCard.bottomLabel?.textColor = storyboardCard.topLabel?.textColor
+        storyboardCard.bottomLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
+        
+        
+        storyboardCard.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 150).isActive = true
+        storyboardCard.topAnchor.constraint(equalTo: view.topAnchor, constant: 222).isActive = true
+        
+        storyboardCard.translatesAutoresizingMaskIntoConstraints = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

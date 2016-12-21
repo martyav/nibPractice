@@ -25,6 +25,17 @@ class Card: UIView {
             self.addSubview(view)
             view.frame = self.bounds
             
+            backgroundColor = .black
+            
+            layer.cornerRadius = 5.0
+            layer.masksToBounds = true
+            layer.borderWidth = 2.0
+            layer.borderColor = UIColor.black.cgColor
+            
+            heightAnchor.constraint(equalToConstant: 150).isActive = true
+            widthAnchor.constraint(equalToConstant: 107).isActive = true
+            
+            translatesAutoresizingMaskIntoConstraints = false
         }
     }
 }
