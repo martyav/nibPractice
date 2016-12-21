@@ -118,13 +118,41 @@ Control-drag from the storyboard to the view controller to create an outlet for 
 
 You probably already know all this, but make sure the view controller is set to initial view controller and that it's the correct controller for the view you're currently working on...
 
-*** To be continued during/after lunch ***
+### Running the Project
+If you run your project now, you should see an all-white screen with two little A's in the corner. That's because you haven't done any styling yet.
 
-### Populating your labels in the view controller
-Depending on the kind of stuff you're displaying inside your custom nib, you may want to populate its labels inside the view controller.
-We're doing cards, and we don't want to hardcode them to display any particular thing, so we'll put text inside the labels by calling the custom view's label properties inside viewDidLoad()
-This is more or less the same kind of stuff as populating table cells. You set the labels via the label's text property.
-### Styling
-You can also style the text and other UI items inside the view before they hit viewDidLoad(), of course. For example, you can give the view a border, a background color, or custom fonts.
-Setting properties inside the .Swift file's required init?(coder aDecoder: NSCoder) function will set them for the view that contains your custom view. This is kind of confusing, but don't worry about it too much. Your custom view is basically layered over a generic view when you make it. All this really means is that if you try to set the background in that function, you won't be able to see it, because the custom view will completely cover it.  
+![](https://cloud.githubusercontent.com/assets/19174201/21374546/7d37ff56-c6f5-11e6-900a-b1c4210d5f9c.png)
+
+### Styling in the .Swift file
+You can style the text and other UI items inside the .Swift file. For example, you can give the view a border, a background color, or custom fonts.
+
+You can set some properties inside the required init inside your .Swift file. Properties you might want to set there include the width and height of the card, rounded corners, or border color. 
+
+![](https://cloud.githubusercontent.com/assets/19174201/21374612/e90af2e2-c6f5-11e6-8601-4e21ce4c1db5.png)
+
+However, if you try to set the background color here, it will be covered up by the background color specified inside the nib. 
+
+![](https://cloud.githubusercontent.com/assets/19174201/21374549/7d3ef9c8-c6f5-11e6-8a6c-2ea5f4afa853.png)
+![](https://cloud.githubusercontent.com/assets/19174201/21374547/7d38bff4-c6f5-11e6-9c44-1b3d25795554.png)
+![](https://cloud.githubusercontent.com/assets/19174201/21374637/12975434-c6f6-11e6-90a4-32faca64e40b.png)
+![](https://cloud.githubusercontent.com/assets/19174201/21374548/7d3a2d6c-c6f5-11e6-9fda-c1733f74a72e.png)
+
+The same deal if you try to set the color for the card in the storyboard -- you won't see the color you set there. Instead, you'll see the color you set in the nib. On the other hand, if you don't set the width and height for your card somewhere, the background will stretch to match the dimensions of whatever is on the storyboard -- but the color still won't match.
+
+![](https://cloud.githubusercontent.com/assets/19174201/21374607/dfd02e22-c6f5-11e6-8f07-b5c65f13d6f7.png)
+![](https://cloud.githubusercontent.com/assets/19174201/21374739/eaa53742-c6f6-11e6-8b4b-2534d0930e85.png)
+
+
+### Filling in your labels in the view controller
+Depending on the kind of stuff you're displaying inside your custom nib, you may want to also do some display stuff inside the view controller.
+
+We're making cards, and we don't want to hardcode the labels to display any one thing, so we'll put text inside the labels by calling the custom view's label properties inside viewDidLoad()
+
+This is more or less the same kind of stuff as populating table cells. You set the labels via the label's text property. You can also position them programatically.
+
+![](https://cloud.githubusercontent.com/assets/19174201/21375005/a36b9a90-c6f8-11e6-80a0-acf71988e101.png)
+![](https://cloud.githubusercontent.com/assets/19174201/21375025/cc3efb56-c6f8-11e6-8bff-fc33737437fd.png)
+
+
+
 
