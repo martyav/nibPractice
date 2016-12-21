@@ -1,4 +1,6 @@
 # nibPractice
+![](http://digventures.com/wp-content/uploads/2013/03/birds.png)
+
 How do nibs work?
 ## We just don't know!
 Just playing. Well...maybe not. This is a guide for making and using nibs, but it doesn't really cover what they're doing on the backend. Somebody at Apple knows. It's fine.
